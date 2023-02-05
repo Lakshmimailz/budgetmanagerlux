@@ -104,8 +104,8 @@ export function ExpenseReducer(state:BudgetManagerState,action:CreateExpenseActi
       }
          i++;
       }
-      newState.deleteunpaidExpenses.pop();
       newState.unpaidExpenses = temp;
+      newState.deleteunpaidExpenses = [];
       return newState; 
           }   
 
@@ -128,8 +128,8 @@ export function ExpenseReducer(state:BudgetManagerState,action:CreateExpenseActi
       }
          i++;
       }
-      newState.deletepaidExpenses.pop();
       newState.paidExpenses = temp;
+      newState.deletepaidExpenses = [];
       return newState;
      }      
      }
