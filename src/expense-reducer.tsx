@@ -61,7 +61,10 @@ export function ExpenseReducer(state:BudgetManagerState,action:CreateExpenseActi
             newState.totalCost= newState.totalCost + expense.cost;
             if(newState.totalCost > newState.budget){
                newState.budgettext = "Exceed the budget"
-            } 
+            } else
+            {
+               newState.budgettext = ""
+            }
             return newState;
                }
        case "PAID_EXPENSE":{
@@ -70,7 +73,10 @@ export function ExpenseReducer(state:BudgetManagerState,action:CreateExpenseActi
                   newState.totalCost= newState.totalCost + expense.cost;
                   if(newState.totalCost > newState.budget){
                      newState.budgettext = "Exceed the budget"
-                  } 
+                  } else
+                  {
+                     newState.budgettext = ""
+                  }
                   return newState;        
                  }
      
@@ -96,7 +102,10 @@ export function ExpenseReducer(state:BudgetManagerState,action:CreateExpenseActi
          newState.totalCost= newState.totalCost - expense.cost;
          if(newState.totalCost < newState.budget){
             newState.budgettext = ""
-         } 
+         }  else
+         {
+            newState.budgettext = "Exceed the budget"
+         }
       } else{
          temp.push(expense);
       }
@@ -120,7 +129,10 @@ export function ExpenseReducer(state:BudgetManagerState,action:CreateExpenseActi
          newState.totalCost= newState.totalCost - expense.cost;
          if(newState.totalCost < newState.budget){
             newState.budgettext = ""
-         } 
+         }  else
+         {
+            newState.budgettext = "Exceed the budget"
+         }
       } else{
          temp.push(expense);
       }
